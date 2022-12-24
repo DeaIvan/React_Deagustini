@@ -12,9 +12,8 @@ const CartContextProvider = ({children}) => {
                 ...cartList,
                 {
                     idItem: item.id,
-                    imgItem: item.image[0],
-                    nameItem: item.name,
-                    costItem: item.cost,
+                    nameItem: item.title,
+                    costItem: item.price,
                     qtyItem: qty
                 }
             ]);
@@ -35,7 +34,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const calcTotalPerItem = (idItem) => {
-        let index = cartList.map(item => item.idItem).indexOf(idItem);
+        let index = cartList.findIndex(item => item.idItem === idItem);
         return cartList[index].costItem * cartList[index].qtyItem;
     }
 
