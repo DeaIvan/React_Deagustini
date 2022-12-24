@@ -456,16 +456,20 @@ nav ul li a:hover {
   align-items: center;
   font-size: 22px;
 }
+
+section{
+  margin: 10px;
+}
 .product-content{
   display: flex;
-  width: 300px;
+  width: 100%;
   margin: 0px 30px;
 }
 
 .product-detail{
   background-color: #ffc40050;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
 }
@@ -489,6 +493,8 @@ nav ul li a:hover {
 
 .product-price{
   width: 100%;
+  margin: 5px 30px;
+  background-color: #ffc400;
 }
 
 .order{
@@ -499,9 +505,9 @@ nav ul li a:hover {
 .detail-shop{
   width: 400px;
   height: 300px;
-  text-align: center;
-  background: rgb(107,0,0);
-  background: linear-gradient(90deg, rgba(107,0,0,0) 0%, rgba(255,145,0,1) 35%, rgba(110,0,0,0.008823597798494398) 100%); 
+  text-align: center; 
+  background: rgb(255,196,0);
+  background: linear-gradient(90deg, rgba(255,196,0,0.2105042700674019) 0%, rgba(255,196,0,1) 35%, rgba(255,196,0,0.20770314961922265) 100%); 
   font-size: 22px
 }
 

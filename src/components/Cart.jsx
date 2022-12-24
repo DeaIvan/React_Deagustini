@@ -24,21 +24,21 @@ const Cart = () => {
                     {
                         itemsDet.cartList.length > 0 &&
                         itemsDet.cartList.map(item => 
-                            <section key={item.id}>
+                            <section key={item.idItem}>
                             <div className='product-content'>
                                 <div className='product-detail'>
                                     <span>
-                                        <b>Producto:</b> {item.title}
+                                        <b>Producto:</b> {item.nameItem}
                                     </span>
-                                    <button type="filled" onClick={() => itemsDet.deleteThis(item.id)}>DELETE</button>
+                                    <button type="filled" onClick={() => itemsDet.deleteThis(item.idItem)}>ELIMINAR</button>
                                 </div>
                             </div>
                             <div className='product-price'>
                                 <div>
-                                    <p>{item.qty} item(s)</p>
-                                    <p>$ {item.price}</p>
+                                    <p>Cantidad: {item.qtyItem} item(s)</p>
+                                    <p>Precio por unidad: ${item.costItem}</p>
                                 </div>
-                                 <p>$ {itemsDet.calcTotalPerItem(item.idItem)} </p>
+                                 <p>Precio total: ${itemsDet.calcTotalPerItem(item.idItem)} </p>
                             </div>
                             </section>
                             )
@@ -48,14 +48,18 @@ const Cart = () => {
                     itemsDet.cartList.length > 0 &&
                     <div className="order">
                         <div className='detail-shop'>
-                            <h2>ORDER SUMMARY</h2>
+                            <h2>ORDER TOTAL</h2>
                             <div className='detail.item'>
                                 <h3>Subtotal</h3>
                                 <p><FormatNumber number={itemsDet.calcSubTotal()} /></p>
                             </div>
                             <div className='detail.item'>
-                                <h3>Taxes</h3>
+                                <h3>Tasas</h3>
                                 <p><FormatNumber number={itemsDet.calcTaxes()} /></p>
+                            </div>
+                            <div className='detail.item'>
+                                <h3> Descuento de Tasas</h3>
+                                <p>- <FormatNumber number={itemsDet.calcTaxes()} /></p>
                             </div>
                             <div className='detail.item' type="total">
                                 <h3>Total</h3>

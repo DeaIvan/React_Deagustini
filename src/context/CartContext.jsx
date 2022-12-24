@@ -28,8 +28,8 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
-    const deleteThis = (id) => {
-        const newArray = cartList.filter(item => item.id !== id);
+    const deleteThis = (idItem) => {
+        const newArray = cartList.filter(item => item.idItem !== idItem);
         setCartList(newArray);
     }
 
